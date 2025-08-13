@@ -1,0 +1,2 @@
+# CypressAuthentifikationCode
+Cypress Typecript Authentifikation
