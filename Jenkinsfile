@@ -16,11 +16,12 @@ pipeline {
               bat 'npx cypress run'
           }
       }
-       stage('Deploy') {
-          steps {
-              echo 'Deploying....'
-          }
-       }
+        post {
+        always {
+            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+            junit 'build/reports/**/*.xml'
+        }
+    }
   }
 }
 
