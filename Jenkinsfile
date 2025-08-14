@@ -4,7 +4,7 @@ pipeline {
   tools {nodejs "24.3.0"  // matches the name configured in Jenkin}
 
   stages{
-      stage('Install Dependencies') {
+    stage('Install Dependencies') {
           steps {
               bat 'npm ci'
           }
