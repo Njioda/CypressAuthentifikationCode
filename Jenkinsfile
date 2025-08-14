@@ -1,18 +1,23 @@
 pipeline {
   agent any
 
-  tools {nodejs "node"  // matches the name configured in Jenkin}
-
-  stages{
-      stage('Install Dependencies') {
-          steps {
-              bat 'npm ci'
-          }
-      }
-      stage('Run Cypress Tests') {
-          steps {
-              bat 'npx cypress run'
-          }
-      }
+  tools {
+    nodejs "node"  // matches the name configured in Jenkins
   }
-        }
+
+  environment {
+    // Optional: set any required ENV variables
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/your-repo/cypress-project.git'
+      }
+    }
+
+    stage('Install Dependencies') {
+      steps {
+        sh 'npm ci'
+      }
+    }
