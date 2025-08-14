@@ -14,6 +14,3 @@ pipeline {
               bat 'npx cypress run'
           }
       }
-   }
-}
-
