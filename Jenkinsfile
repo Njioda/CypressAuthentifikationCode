@@ -1,19 +1,18 @@
 pipeline {
   agent any
 
-  tools {
-    nodejs "node"  // matches the name configured in Jenkins
-  }
+  tools {nodejs "node"  // matches the name configured in Jenkin}
 
-    stage('Install Dependencies') {
-      steps {
-        sh 'npm ci'
+  stages{
+      stage('Install Dependencies') {
+          steps {
+              bat 'npm ci'
+          }
       }
-    }
-
-    stage('Run Cypress Tests') {
-      steps {
-        sh 'npx cypress run'
+      stage('Run Cypress Tests') {
+          steps {
+              bat 'npx cypress run'
+          }
       }
-    }
+   }
 }
