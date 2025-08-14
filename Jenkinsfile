@@ -5,7 +5,7 @@ pipeline {
     nodejs "24.3.0"  // matches the name configured in Jenkin
   }
 
-  stages {
+ stages {
       stage('Install Dependencies') {
           steps {
               bat 'npm ci'
@@ -16,7 +16,7 @@ pipeline {
               bat 'npx cypress run'
           }
       }
-        post {
+  post {
         always {
             archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
             junit 'build/reports/**/*.xml'
