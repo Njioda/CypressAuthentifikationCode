@@ -16,6 +16,11 @@ pipeline {
               bat 'npx cypress run'
           }
       }
+       stage('Deploy') {
+          steps {
+              echo 'Deploying....'
+          }
+       }
   }
 }
 
