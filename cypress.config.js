@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   viewportHeight: 1080,
   viewportWidth: 1920,
-  video: false,
+  video: true,
   e2e: {
     baseUrl: "https://demoblaze.com/",
     excludeSpecPattern: ["**/1-getting-started", "**/2-advanced-examples"],
