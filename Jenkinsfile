@@ -7,7 +7,7 @@ pipeline {
     }
 
   tools {
-    nodejs "24.3.0"  // matches the name configured in Jenkin
+    nodejs "24.7.0"  // matches the name configured in Jenkin
   }
 
  stages {
@@ -19,7 +19,7 @@ pipeline {
       stage('Run Cypress Tests') {
           steps {
               //bat 'npx cypress run'
-              bat 'npx cypress run --browser ${BROWSER} --cy ${SPEC}'
+              bat 'npx cypress run'
           }
       }
   
