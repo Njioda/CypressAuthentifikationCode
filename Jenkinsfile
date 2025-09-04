@@ -1,7 +1,7 @@
 pipeline {
   agent any
   parameters {
-        kstring(name: 'SPEC', defaultValue: "cypress/e2e/**/**", description: "enter the scripts path that you wanrt to execue ")
+        string(name: 'SPEC', defaultValue: "cypress/e2e/**/**", description: "enter the scripts path that you wanrt to execue ")
         //choice(name: 'BROWSER', choices: ['chrome', 'edge', 'electron'], description: "Choise the browser you want to execute")
     
     }
